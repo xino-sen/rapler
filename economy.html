@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economy | NewsPortal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; opacity: 0; transition: opacity 0.5s ease-in-out; }
+        .fade-in { opacity: 1; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .menu-closed { transform: translateX(100%); }
+        .menu-open { transform: translateX(0); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+
+    <nav class="sticky top-0 z-50 glass border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-black tracking-tighter text-red-600">NEWS<span class="text-black">PORTAL</span></h1>
+            <div class="hidden md:flex space-x-8 font-semibold uppercase text-sm tracking-widest">
+                <a href="index.html" class="hover:text-red-600 transition">Home</a>
+                <a href="latest.html" class="hover:text-red-600 transition">Latest News</a>
+                <a href="nation.html" class="hover:text-red-600 transition">Nation</a>
+                <a href="economy.html" class="text-red-600 transition underline decoration-2 underline-offset-8">Economy</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block bg-black text-white px-5 py-2 text-sm font-bold uppercase hover:bg-red-600 transition">Join Us</button>
+                <button id="menu-btn" class="md:hidden flex flex-col space-y-1.5 focus:outline-none p-2 z-50">
+                    <span class="w-6 h-0.5 bg-black transition-all" id="line1"></span>
+                    <span class="w-6 h-0.5 bg-black transition-all" id="line2"></span>
+                    <span class="w-6 h-0.5 bg-black transition-all" id="line3"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white menu-closed md:hidden flex flex-col pt-24 px-8 space-y-6 text-2xl font-black uppercase tracking-tighter">
+        <a href="index.html" class="hover:text-red-600 border-b border-gray-100 pb-4">Home</a>
+        <a href="latest.html" class="hover:text-red-600 border-b border-gray-100 pb-4">Latest</a>
+        <a href="nation.html" class="hover:text-red-600 border-b border-gray-100 pb-4">Nation</a>
+        <a href="economy.html" class="text-red-600 border-b border-gray-100 pb-4">Economy</a>
+        <button class="mt-4 bg-red-600 text-white py-4 text-lg font-bold uppercase">Join Us</button>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="mb-8 flex space-x-6 overflow-x-auto pb-4 border-b border-gray-100 no-scrollbar">
+            <div class="flex-shrink-0 flex items-center space-x-2">
+                <span class="text-[10px] font-black uppercase bg-green-100 text-green-700 px-2 py-1 rounded">PSEi</span>
+                <span class="font-bold text-sm">7,240.50</span>
+                <span class="text-green-600 text-xs">+1.2%</span>
+            </div>
+            <div class="flex-shrink-0 flex items-center space-x-2">
+                <span class="text-[10px] font-black uppercase bg-red-100 text-red-700 px-2 py-1 rounded">USD/PHP</span>
+                <span class="font-bold text-sm">55.82</span>
+                <span class="text-red-600 text-xs">-0.04%</span>
+            </div>
+            <div class="flex-shrink-0 flex items-center space-x-2">
+                <span class="text-[10px] font-black uppercase bg-green-100 text-green-700 px-2 py-1 rounded">GOLD</span>
+                <span class="font-bold text-sm">$2,341.00</span>
+                <span class="text-green-600 text-xs">+0.8%</span>
+            </div>
+        </div>
+
+        <header class="mb-12 border-b-4 border-black pb-4">
+            <h2 class="text-6xl font-black uppercase tracking-tighter">Economy <span class="text-red-600">& Finance</span></h2>
+            <p id="current-date" class="text-gray-500 font-medium mt-2">Market Data • Thursday, April 9, 2026</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            <div class="lg:col-span-3 space-y-12">
+                
+                <article class="grid grid-cols-1 md:grid-cols-3 gap-6 group cursor-pointer">
+                    <div class="overflow-hidden rounded-lg bg-gray-200 aspect-video md:aspect-square">
+                        <img src="image/market.webp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Market Analysis">
+                    </div>
+                    <div class="md:col-span-2 flex flex-col justify-center">
+                        <span class="text-red-600 text-xs font-black uppercase tracking-widest mb-2">Central Bank</span>
+                        <h3 class="text-2xl font-bold group-hover:underline leading-tight mb-3">Inflation eases to 3.1% in March: What this means for your interest rates</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">Economic analysts suggest that the steady decline in inflation could lead to a pivot in monetary policy by the second quarter of the year.</p>
+                        <div class="flex items-center text-xs text-gray-400 font-bold space-x-4 uppercase">
+                            <span>By Aladin Dev • 45 Min Ago</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="grid grid-cols-1 md:grid-cols-3 gap-6 group cursor-pointer">
+                    <div class="overflow-hidden rounded-lg bg-gray-200 aspect-video md:aspect-square">
+                        <img src="image/tech-eco.webp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Tech Stocks">
+                    </div>
+                    <div class="md:col-span-2 flex flex-col justify-center">
+                        <span class="text-red-600 text-xs font-black uppercase tracking-widest mb-2">Investment</span>
+                        <h3 class="text-2xl font-bold group-hover:underline leading-tight mb-3">Tech Stocks surge as global chip shortage officially ends</h3>
+                        <p class="text-gray-600 mb-4 line-clamp-2">The manufacturing sector sees a massive boost as supply chains normalize, sending electronics and automotive stocks to record highs.</p>
+                        <div class="flex items-center text-xs text-gray-400 font-bold space-x-4 uppercase">
+                            <span>3 Hours Ago</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <aside class="space-y-8">
+                <div class="bg-black text-white p-6 rounded-lg">
+                    <h4 class="text-lg font-black uppercase mb-4">Stock Alerts</h4>
+                    <p class="text-gray-400 text-sm mb-4">Get instant notifications on market-moving news.</p>
+                    <input type="email" placeholder="Your work email" class="w-full bg-gray-900 border-none text-white p-3 text-sm rounded mb-3 focus:ring-2 focus:ring-red-600 outline-none">
+                    <button class="w-full bg-red-600 py-3 font-bold uppercase text-xs tracking-widest hover:bg-red-700 transition">Get Alerts</button>
+                </div>
+
+                <div class="border-t pt-6">
+                    <h4 class="font-black uppercase text-sm mb-4 tracking-tighter italic">Market Insights</h4>
+                    <ul class="space-y-4">
+                        <li class="group cursor-pointer">
+                            <p class="text-sm font-bold group-hover:text-red-600">The rise of digital currencies in emerging markets.</p>
+                        </li>
+                        <li class="group cursor-pointer">
+                            <p class="text-sm font-bold group-hover:text-red-600">Real estate trends: Why suburbs are becoming more expensive.</p>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-20 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-4">
+                    <h1 class="text-2xl font-black tracking-tighter text-red-600">NEWS<span class="text-black">PORTAL</span></h1>
+                    <p class="text-gray-500 text-sm leading-relaxed">Expert financial analysis and global market tracking for the modern professional.</p>
+                </div>
+                <div>
+                    <h4 class="font-black uppercase text-xs tracking-widest mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm font-medium text-gray-600">
+                        <li><a href="index.html" class="hover:text-red-600 transition">Home</a></li>
+                        <li><a href="latest.html" class="hover:text-red-600 transition">Latest News</a></li>
+                        <li><a href="economy.html" class="hover:text-red-600 transition">Economy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black uppercase text-xs tracking-widest mb-6">Support</h4>
+                    <ul class="space-y-3 text-sm font-medium text-gray-600">
+                        <li><a href="#" class="hover:text-red-600 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-red-600 transition">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black uppercase text-xs tracking-widest mb-6">Social</h4>
+                    <div class="flex space-x-4">
+                        <span class="text-xs font-bold text-gray-400 cursor-pointer hover:text-red-600">FB</span>
+                        <span class="text-xs font-bold text-gray-400 cursor-pointer hover:text-red-600">TW</span>
+                        <span class="text-xs font-bold text-gray-400 cursor-pointer hover:text-red-600">IG</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em] border-t border-gray-100 pt-8">
+                © 2026 Professional News Portal. Market Data Delayed by 15 Mins.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('fade-in');
+            
+            // Set dynamic date
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').innerText = `Market Data • ${new Date().toLocaleDateString('en-US', options)}`;
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const l1 = document.getElementById('line1');
+        const l2 = document.getElementById('line2');
+        const l3 = document.getElementById('line3');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('menu-closed');
+            mobileMenu.classList.toggle('menu-open');
+            l1.classList.toggle('rotate-45');
+            l1.classList.toggle('translate-y-2');
+            l2.classList.toggle('opacity-0');
+            l3.classList.toggle('-rotate-45');
+            l3.classList.toggle('-translate-y-2');
+            document.body.classList.toggle('overflow-hidden');
+        });
+    </script>
+</body>
+</html>
